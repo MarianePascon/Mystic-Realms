@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Realms</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        *{
+            font-family: "Quicksand";
+            background-color: #d9e4e7;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+        }
+        .cartas{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0;
+            
+        }
+
+        .uma-carta{
+            list-style: none;
+            text-align: center;
+            border: 1px solid;
+            width: 400px;
+            padding: 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            
+        }
+
+        .imagem{
+            margin: 0;
+        }
+
+        .imagem img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            transition: tranform 0.4 ease-in-out;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .imagem img:hover{
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mystic Realms</h1>
+    <h3>Mystic Realms é um jogo de cartas onde você pode assumir o papel de um poderoso guerreiro, um sábio mago ou até
+        mesmo uma bruxa astuta. Use criaturas mágicas e habilidades especiais para lutar contra seus oponentes em
+        batalhas emocionantes. Explore um mundo cheio de mistérios e perigos e desafie outros jogadores para se tornar o
+        maior campeão dos reinos místicos. Aproveite as estratégias em grupo, escolha as melhores táticas e sinta a
+        emoção de se tornar o vencedor em Mystic Realms.</h3>
+
+    <ul class="cartas"></ul>
+
+    <script>
+        const personagens = [
+            {
+                nome: "Axl, o Dragão Vermelho",
+                foto: "imagens/dragon.jfif",
+                frase: "Fogo e sangue são minhas marcas",
+                descricao: "Um dragão lendário conhecido por seu fogo abrasador e ferocidade em combate."
+            },
+            {
+                nome: "Gorak, o Guerreiro Forte",
+                foto: "imagens/guerreiro.jfif",
+                frase: "Com minha força, ninguém pode me deter",
+                descricao: "Um guerreiro habilidoso com anos de experiência em batalha, conhecido por sua força inigualável."
+            },
+            {
+                nome: "Mael, o Mago Idoso",
+                foto: "imagens/Altharion.jfif",
+                frase: "A sabedoria é minha maior arma",
+                descricao: "Um mago poderoso que dedicou sua vida ao estudo da magia, capaz de conjurar feitiços poderosos e temidos por seus inimigos."
+            },
+            {
+                nome: "Lillith, a Bruxa Bonita",
+                foto: "imagens/Morgana.jfif",
+                frase: "Minha beleza é minha maior arma",
+                descricao: "Uma bruxa sedutora capaz de lançar feitiços mortais com um simples olhar, conhecida por sua beleza estonteante e personalidade manipuladora."
+            },
+            {
+                nome: "Kara, a Guerreira Destemida",
+                foto: "imagens/Sylara.jfif",
+                frase: "Com minha coragem, nada pode me parar",
+                descricao: "Uma guerreira implacável com uma coragem inabalável, conhecida por liderar exércitos à vitória em batalhas impossíveis."
+            },
+            {
+                nome: "Arawn, o Líder dos Lobos",
+                foto: "imagens/Alfaia.jfif",
+                frase: "Nós somos a alcateia, nós somos fortes juntos",
+                descricao: "Um lobo astuto e corajoso que lidera uma alcateia feroz, temido por sua força e habilidade em caça e combate."
+            },
+            {
+                nome: "Rei Leoric",
+                foto: "imagens/Cedric.jfif",
+                frase: "Meu reinado será eterno",
+                descricao: "Um rei impiedoso que governa seu reino com mão de ferro, temido por seus súditos e respeitado por seus aliados."
+            },
+            {
+                nome: "Nym, o Elfo Pequeno",
+                foto: "imagens/Eryndor.jfif",
+                frase: "A beleza vem em pequenos pacotes",
+                descricao: "Um elfo pequeno, mas ágil e astuto, capaz de superar inimigos maiores e mais fortes com sua inteligência e habilidade em combate."
+            },
+            {
+                nome: "Titania, a Fada Feiticeira",
+                foto: "imagens/Luminara.jfif",
+                frase: "A magia corre em minhas veias",
+                descricao: "Uma fada poderosa capaz de controlar os elementos e conjurar feitiços poderosos, conhecida por sua beleza radiante e personalidade encantadora."
+            },
+            {
+                nome: "Fenris, o Lobo Feroz",
+                foto: "imagens/Fenris.jfif",
+                frase: "Minha mordida é tão forte quanto meu uivo",
+                descricao: "Um lobo selvagem e feroz conhecido por sua habilidade em caça e combate, temido por seus inimigos e respeitado por seus companheiros de matilha."
+            }
+
+        ];
+
+        personagens.forEach(function(carta){
+            let conteudo = "<li class='uma-carta'>";
+                conteudo += `<p class='nome'>${carta.nome}</p>`;
+                conteudo += `<p class='imagem'><img src="${carta.foto}" width="300"></p>`;
+                conteudo += `<p class='frase'>${carta.frase}</p>`;
+                conteudo += `<p class='historia'>${carta.descricao}</p>`;
+                conteudo += "</li>";
+                document.querySelector(".cartas").innerHTML += conteudo;
+        })
+
+    </script>
+</body>
+
+</html>
